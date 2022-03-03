@@ -1,0 +1,39 @@
+
+$primaryTxtColor: black;
+$primaryBtn: #43BA7F;
+$hoveredBtn: #56C18C;
+$activeBtn: #3CA772;
+$disabledBtn: #CCD1D5;
+$secondary: #ffffff;
+$mainBg: #FBF5F2;
+$secondaryBg: #000;
+
+$primaryFont: 'Rubik', sans-serif;
+
+
+@mixin buttonStyle($paddingY, $paddingX) {
+    padding: $paddingY $paddingX;
+    border-radius: 30px;
+    background-color: $primaryBtn;
+    outline: none;
+    border: none;
+    color: $secondary;
+    transition-duration: .5s;
+    cursor: pointer;
+    &:hover{
+        background-color: $hoveredBtn;
+    };
+    &:active{
+        background-color: $activeBtn;
+    };
+    &:disabled{
+        background-color: $disabledBtn;
+    }
+}
+
+@mixin flexCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
