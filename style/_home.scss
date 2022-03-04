@@ -2,7 +2,7 @@
 
 
 header{
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('../assets/header-bg.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -79,7 +79,7 @@ nav{
 
 .header__text{
     display: none;
-
+    // margin: 150px auto;
     h1{
         font-family: $primaryFont;
         color: $secondary;
@@ -251,9 +251,85 @@ main{
 }
 
 .main__stats{
-    height: 100vh;
+    // height: 100vh;
+}
+.main__stats-container{
+    width: 90%;
+    margin: auto;
+    padding: 65px 0;
 }
 
+.main__stats-headline{
+    text-align: center;
+    margin-bottom: 70px;    
+
+    h3{
+        color: $primaryBtn;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    h1{
+        font-size: 24px;
+        line-height: 30px;
+    }
+}
+.main__stats-cards{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+.main__stats-card{
+    @include flexCenter;
+
+    width: 75%;
+    margin: auto;
+    padding: 25px 0;;
+    background-color: #fff;
+    border-radius: 10px;
+    // z-index: 1;
+
+    h1{
+        font-size: 34px;
+        line-height: 43px;
+    }
+    h3{
+        font-size: 20px;
+        line-height: 25px;
+        color: #354556;
+    }
+    .line{
+        width: 25%;
+        height: 1px;
+        background-color: #E6E8EA;
+        margin: 16px 0;
+    }
+}
+#main__sales-card{
+    position: relative;
+
+    #orange-svg{
+        position: absolute;
+        top: -40px;
+        right: -45px;
+        z-index: 1;
+    }
+    #pink-svg{
+        position: absolute;
+        top: 20px;
+        right: -45px;
+        // z-index: -1;
+    }
+}
+#main__rating-card{
+    position: relative;
+
+    svg{
+        position: absolute;
+        bottom: -40px;
+        left: -45px;
+        z-index: 1;
+    }
+}
 .main__how-we-do{
     background-color: $secondaryBg;
     color: $secondary;
@@ -372,8 +448,10 @@ footer{
     width: 90%;
     margin: auto;
     padding: 55px 0;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 50px;
 }
 
@@ -431,5 +509,102 @@ footer{
     
     a{
         text-decoration: none;
+    }
+}
+
+
+@media(min-width:992px){
+    nav{
+        width: 85%;
+        margin: auto;
+    }
+    .header__menu{
+        position: static;
+        background-color: unset;
+        height: auto;
+        ul{
+            flex-direction: row;
+        }
+        ul a{
+            color: #fff;
+        }
+        .header__brand-name, .header__contact--wider{
+            display: none;
+        }
+    }
+    .header__hamburger-button{
+        display: none;
+    }
+    .header__text{
+        display: unset;
+        margin: 140px 0 65px 0;
+        background-color:red;
+    }
+
+    .main__img{
+        width: 800px;
+        height: auto;
+        top: -5.5%;
+    }
+
+    .main__container{
+        flex-direction: row !important;
+        align-items: unset !important;
+        // padding-top: 150px;
+    }
+    .main__cards{
+        flex-direction: row !important;
+        align-items: unset !important;
+        gap: 50px;
+    }
+    .main__card-text{
+        text-align: left;
+        margin-bottom: 48px;
+        h1{
+            margin-bottom: 24px;
+        }
+    }
+
+    .main__brand-logos{
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .products-container{
+        grid-template-columns: 1fr 1fr;
+    }
+    .products-container{
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    .main__client-cards-container{
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .main__stats-cards{
+        grid-template-columns: repeat(3, 1fr);
+
+        .main__stats-card{
+            // padding: 60px 0;
+            height: 240px;
+            justify-content: center;
+        }
+    }
+    .main__blog-card-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    .main__latest-blog-card-text{
+        margin-left: 15px;
+    }
+
+    .footer__container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .footer__mail{
+        display: flex;
+        gap: 8px;
     }
 }
