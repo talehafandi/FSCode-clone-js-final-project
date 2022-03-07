@@ -88,7 +88,7 @@ nav{
         // margin: 0;
     }
     span{
-        color: orange;
+        color: rgba(255, 166, 0, 0.788);
     }
 }
 
@@ -102,7 +102,7 @@ nav{
     }
 }
 
-main{
+#home-main{
     position: relative;
     background-color: $mainBg;
     font-family: $primaryFont;
@@ -206,11 +206,15 @@ main{
 
 .main__product-poster--black{
     @include flexCenter;
+}
+.main__product-poster--black a{
+    text-decoration: none;
+    margin-top: 50px;
+    color: #3878F2;
 
-    a{
-        text-decoration: none;
-        margin-top: 50px;
-        color: #3878F2;
+    img{
+        width: auto;
+        margin-left: 10px;
     }
 }
 
@@ -456,7 +460,9 @@ footer{
 }
 
 .footer__logo{
-    @include flexCenter;
+    // @include flexCenter;
+    display: grid;
+    justify-content: center;
 }
 .footer__menu{
     ul{
@@ -511,9 +517,18 @@ footer{
         text-decoration: none;
     }
 }
+.footer__social-media--desktop{
+    @extend .footer__social-media;
+
+    display: none;
+}
 
 
 @media(min-width:992px){
+    header{
+        display: grid;
+        align-content: flex-start;
+    }
     nav{
         width: 85%;
         margin: auto;
@@ -522,6 +537,7 @@ footer{
         position: static;
         background-color: unset;
         height: auto;
+        width: auto;
         ul{
             flex-direction: row;
         }
@@ -532,17 +548,18 @@ footer{
             display: none;
         }
     }
+    
     .header__hamburger-button{
         display: none;
     }
     .header__text{
         display: unset;
-        margin: 140px 0 65px 0;
-        background-color:red;
+        margin: 140px 200px 60px;
+        text-align: center;
     }
 
     .main__img{
-        width: 800px;
+        width: 55%;
         height: auto;
         top: -5.5%;
     }
@@ -550,8 +567,16 @@ footer{
     .main__container{
         flex-direction: row !important;
         align-items: unset !important;
-        // padding-top: 150px;
+        padding-top: 260px !important;
     }
+    .main__headline{
+        width: 60%;
+        text-align: left;
+        h1{
+            font-weight: 600;
+        }
+    }
+
     .main__cards{
         flex-direction: row !important;
         align-items: unset !important;
@@ -603,8 +628,23 @@ footer{
     .footer__container{
         grid-template-columns: 1fr 1fr 1fr;
     }
+    .footer__logo{
+        gap: 35px;
+        justify-content: start;
+    }
     .footer__mail{
         display: flex;
         gap: 8px;
+    }
+    .footer__social-media{
+        display: none;
+    }
+    .footer__social-media--desktop{
+        display: grid;
+        gap: 35px;
+        
+        .footer__icons a{
+            margin-right: 20px;
+        }
     }
 }

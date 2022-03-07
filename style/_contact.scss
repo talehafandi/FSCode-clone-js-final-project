@@ -1,0 +1,110 @@
+@import './variables';
+
+body{
+    font-family: $primaryFont;
+}
+
+#contact{
+    background-color: $contactBg;
+}
+.contact__container{
+    width: 90%;
+    margin: auto;
+}
+.contact__headline{
+    text-align: center;
+    padding: 35px 0;
+    h1{
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 30px;
+    }
+    h3{
+        // font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.contact__application-headline{
+    h1{
+        font-size: 24px;
+        line-height: 30px;
+        color: #212121;
+        margin-bottom: 8px;
+    }
+    h3{
+        line-height: 24px;
+        color: #677480
+    }
+}
+
+#contact__form{
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr;
+    padding: 50px 0 65px;
+    border-bottom: 1px solid gray;
+
+    label{
+        font-size: 20px;
+        line-height: 25px;
+    }
+}
+
+#contact__form input{
+    background-color: $contactBg;
+    border: none;
+    border-bottom: 1px solid gray;
+    text-align: center;
+    padding-bottom: 12px;
+    outline: none;
+
+    &::placeholder{
+        color: #FF8145;
+        opacity: .4;
+    }
+}
+
+.checkbox-container label{
+    font-size: 16px !important;
+    line-height: 20px !important;
+    color: #354556;
+}
+.contact__form-submit{
+    @include buttonStyle(15px, 100px);
+}
+
+.contact__info{    
+    text-align: center;
+    padding: 40px 0;
+    display: grid;
+    gap: 55px;
+
+    div{
+        @include flexCenter;
+        justify-content: center;
+        gap: 25px;
+        width: 50%;
+        margin: auto;
+    }
+}
+
+@media(min-width: 992px){
+    #contact__form{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contact__headline{
+        width: 55%;
+        margin: auto;
+    }
+
+    .contact__info{
+        width: 55%;
+        margin: auto;
+        grid-template-columns: repeat(3, 1fr);
+        
+        div{
+            width: 100%;
+        }
+    }
+}
