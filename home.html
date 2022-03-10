@@ -15,6 +15,7 @@
             <div class="header__brand-name">
                 <img src="assets/brand-logo.svg" alt="Brand Logo">    
             </div>
+            <div class="header__menu-container">
             <div class="header__menu">
                 <div class="header__brand-name">
                     <svg width="156" height="48" viewBox="0 0 156 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,10 +26,10 @@
                     </svg>    
                 </div>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="home.html" target="_blank">Home</a></li>
+                    <li><a href="#" target="_blank">Blogs</a></li>
+                    <li><a href="blogContent.html" target="_blank">Blog Content</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <button class="header__contact--wider">Contact</button>
             </div>
@@ -41,6 +42,7 @@
                         <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>    
                 </button>
+            </div>
             </div>
         </nav>
         <div class="header__text">
@@ -198,7 +200,9 @@
                 </div>
                 <div class="main__client-cards">
                     <h1>Discovery</h1>
-                    <h3>Seamless communication through Phone/Skype/Zoom/Chat/Email</h3> 
+                    <h3>Seamless communication through Phone/Skype/
+                        Zoom/Chat/
+                        Email</h3> 
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="32" height="32" rx="4" fill="#61FDF3"/>
                     </svg>
@@ -234,13 +238,6 @@
                         <h1>6600+</h1>
                         <div class="line"></div>
                         <h3>sales</h3>
-
-                        <svg id="orange-svg" width="81" height="83" viewBox="0 0 142 143" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15.273 104.514C-15.4862 91.5007 7.87098 53.2959 19.1163 37.7301C22.4253 33.1498 26.4162 29.1672 30.9604 25.8088C41.1194 18.3005 61.3217 4.90404 80.773 1.0139C102.434 -3.31817 113.818 6.74802 124.549 21.3798C130.567 29.5845 134.923 38.9458 137.342 48.829C144.286 77.2043 142.353 93.8298 128.273 115.514C120.081 125.168 113.655 132.842 105.547 138.088C84.8742 151.465 62.3818 132.824 42.3039 118.57C36.5072 114.455 28.3463 110.045 15.273 104.514Z" fill="#FFD446"/>
-                        </svg>
-                        <svg id="pink-svg" width="99" height="96" viewBox="0 0 198 193" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M172.536 49.4561C172.536 49.4561 121.036 -8.04387 65.5359 0.956133C-11.0723 13.3791 -10.9569 81.5685 17.5359 141.956C51.0359 212.956 147.036 196.456 184.036 166.456C221.035 136.456 172.536 49.4561 172.536 49.4561Z" fill="#FFA1BD"/>
-                        </svg>
                     </div>
 
                     <div class="main__stats-card">
@@ -253,11 +250,11 @@
                         <h1>4.98</h1>
                         <div class="line"></div>
                         <h3>item rating</h3>
-
-                        <svg width="83" height="95" viewBox="0 0 193 222" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M31.0949 56.6963C18.5411 90.0958 1.69249 79.5136 0.0406664 121.18C-1.61116 162.847 47.2828 232.291 105.757 220.717C164.232 209.143 177.777 152.265 177.777 152.265C177.777 152.265 201.563 97.3708 189.67 63.6407C177.777 29.9106 138.463 -4.48084 96.8375 0.479469C55.2116 5.43978 43.6488 23.2968 31.0949 56.6963Z" fill="#60CC96"/>
-                        </svg>
                     </div>
+
+                    <img src="assets/home-stats/yellow.svg" id="yellow">
+                    <img src="assets/home-stats/pink.svg" id="pink">
+                    <img src="assets/home-stats/green.svg" id="green">
                 </div>
             </div>
         </section>
@@ -265,19 +262,14 @@
         <section class="main__how-we-do">
             <div class="how-we-do-container">
                 <h1 class="main__how-we-do-title">Here's how we do it</h1>
-                <div class="main__quote-icons">
-                    <svg width="68" height="40" viewBox="0 0 136 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect y="40" width="40" height="40" fill="#FCC231"/>
-                        <path d="M40 0C34.7471 -6.26399e-08 29.5457 1.03463 24.6927 3.04482C19.8396 5.05501 15.4301 8.00139 11.7157 11.7157C8.00138 15.4301 5.055 19.8396 3.04482 24.6927C1.03463 29.5457 -7.93162e-07 34.7471 0 40L16 40C16 36.8483 16.6208 33.7274 17.8269 30.8156C19.033 27.9038 20.8008 25.258 23.0294 23.0294C25.258 20.8008 27.9038 19.033 30.8156 17.8269C33.7274 16.6208 36.8483 16 40 16L40 0Z" fill="#FCC231"/>
-                        <rect x="56" y="40" width="40" height="40" fill="#43BA7F"/>
-                        <path d="M96 0C90.7471 -6.26399e-08 85.5457 1.03463 80.6927 3.04482C75.8396 5.05501 71.4301 8.00139 67.7157 11.7157C64.0014 15.4301 61.055 19.8396 59.0448 24.6927C57.0346 29.5457 56 34.7471 56 40L72 40C72 36.8483 72.6208 33.7274 73.8269 30.8156C75.033 27.9038 76.8008 25.258 79.0294 23.0294C81.258 20.8008 83.9038 19.033 86.8156 17.8269C89.7274 16.6208 92.8483 16 96 16L96 0Z" fill="#43BA7F"/>
-                    </svg>
 
-                    <svg width="34" height="16" viewBox="0 0 34 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M26.0757 15L33.0086 8L26.0757 1" stroke="#43BA7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M7.92334 15L0.990436 8L7.92334 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>                        
-                </div>
+                <!-- <div class="main__quote-icons"> -->
+                <img src="assets/home-how-we-do/double-quote.svg" id="main__double-quote" >
+
+                <img src="assets/home-how-we-do/gr.svg" id="main__gr">                      
+                <!-- </div> -->
+
+                <div class="main__how-we-do-content">
                 <p class="main__how-we-do-text">
                     Scott and his team at FS code were great to work with on our Webflow project. 
                     The team are experts when it comes to strategy, design, Webflow development, 
@@ -294,6 +286,7 @@
                         <h1>Ulvin Omarov</h1>
                         <h3>UX Designer</h3>
                     </div>
+                </div>
                 </div>
             </div>
 
@@ -337,7 +330,7 @@
             <div class="footer__logo">
                 <img src="assets/brand-logo.svg" alt="Brand Logo"/>  
 
-                <div class="footer__social-media--desktop">
+                <!-- <div class="footer__social-media--desktop">
                     <div class="footer__text">
                         <p>© 2022 FSCode. All rights reserved</p>
                     </div>
@@ -355,7 +348,7 @@
                             <img src="assets/footer/youtube.svg" alt="youtube link">
                         </a>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div class="footer__menu">

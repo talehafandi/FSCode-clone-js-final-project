@@ -3,7 +3,12 @@
 body{
     font-family: $primaryFont;
 }
-
+nav{
+    padding: 15px 0;
+}
+.header__menu--white a{
+    color: $primaryTxtColor !important;
+}
 #contact{
     background-color: $contactBg;
 }
@@ -40,7 +45,7 @@ body{
 
 #contact__form{
     display: grid;
-    gap: 32px;
+    gap: 40px;
     grid-template-columns: 1fr;
     padding: 50px 0 65px;
     border-bottom: 1px solid gray;
@@ -48,15 +53,21 @@ body{
     label{
         font-size: 20px;
         line-height: 25px;
+        margin-right: 25px;
+    }
+    .div{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 35px;
     }
 }
 
-#contact__form input{
+.div input{
     background-color: $contactBg;
     border: none;
     border-bottom: 1px solid gray;
     text-align: center;
-    padding-bottom: 12px;
+    // padding-bottom: 12px;
     outline: none;
 
     &::placeholder{
@@ -106,5 +117,11 @@ body{
         div{
             width: 100%;
         }
+    }
+    #contact__form .div{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .div input{
+        width: 280px;
     }
 }
