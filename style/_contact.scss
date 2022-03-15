@@ -9,6 +9,14 @@ nav{
 .header__menu--white a{
     color: $primaryTxtColor !important;
 }
+.header__hamburger-button--black{
+    // @extend .header__hamburger-button;
+    background-color: white !important;
+
+    div{
+        background-color: black !important;
+    }
+}
 #contact{
     background-color: $contactBg;
 }
@@ -44,11 +52,15 @@ nav{
 }
 
 #contact__form{
+    padding: 50px 0 65px;
+    border-bottom: 1px solid gray;
+    display: grid;
+    gap: 50px;    
+}
+#contact__form-container{
     display: grid;
     gap: 40px;
     grid-template-columns: 1fr;
-    padding: 50px 0 65px;
-    border-bottom: 1px solid gray;
 
     label{
         font-size: 20px;
@@ -56,31 +68,56 @@ nav{
         margin-right: 25px;
     }
     .div{
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 35px;
     }
 }
 
-.div input{
+.div input, .div select{
     background-color: $contactBg;
     border: none;
     border-bottom: 1px solid gray;
     text-align: center;
     // padding-bottom: 12px;
     outline: none;
-
+    color: #FF8145;
+    opacity: .4;
+    font-size: 20px;
+    
     &::placeholder{
         color: #FF8145;
-        opacity: .4;
+    }
+    &:focus{
+        opacity: 1;
+        color: $primaryTxtColor;
+    }
+    // &:autofill{
+    //     color: $primaryTxtColor;
+    // }
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.checkbox-container{
+    display:flex;
+    align-items: center;
+
+    label{
+        font-size: 16px !important;
+        line-height: 20px !important;
+        color: #354556;
+    }
+    #checkbox{    
+        width: 24px;
+        height: 24px;
+        background-color: #FAF4E7;
     }
 }
 
-.checkbox-container label{
-    font-size: 16px !important;
-    line-height: 20px !important;
-    color: #354556;
-}
 .contact__form-submit{
     @include buttonStyle(15px, 100px);
 }
@@ -99,9 +136,32 @@ nav{
         margin: auto;
     }
 }
+.contact__form-submit-container{
+    position: relative;
+}
+.contact__confirmation-message{
+    // display: flex;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: none;
+
+    span{
+        margin: 0 8px;
+        opacity: .4;
+        color: $primaryTxtColor;
+    }
+    a{
+        text-decoration: none;
+        color: $mainBlue;
+        font-weight: bold;
+    }
+}
 
 @media(min-width: 992px){
-    #contact__form{
+    #contact__form-container{
         grid-template-columns: repeat(2, 1fr);
     }
     .contact__headline{
@@ -118,10 +178,15 @@ nav{
             width: 100%;
         }
     }
-    #contact__form .div{
-        grid-template-columns: repeat(2, 1fr);
+    #contact__form-container .div{
+        flex-direction: row;
     }
-    .div input{
+    .div input, .div select{
         width: 280px;
+    }
+
+    .contact__form-submit{
+        width: 176px;
+        padding: 15px 0;
     }
 }

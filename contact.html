@@ -35,12 +35,10 @@
         </div>
         <div class="header__buttons">
             <button class="header__contact">Contact</button>
-            <button class="header__hamburger-button">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>    
+            <button class="header__hamburger-button header__hamburger-button--black">
+                <div class="ham-line"></div>
+                <div class="ham-line"></div>
+                <div class="ham-line"></div>
             </button>
         </div>
         </div>
@@ -60,32 +58,56 @@
                     <h1>Schedule an appointment</h1>
                 </div>
                 
-                <form action="#" id="contact__form">
-                    <div class="div">
-                        <label for="name">Hey, my name is</label>
-                        <input type="text" id="name" name="name" placeholder="Your name">
-                    </div>
-                    
-                    <div class="div">
-                        <label for="name">and I'm looking for</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name">
-                    </div>
-                    
-                    <div class="div">
-                        <label for="email">Get in touch me at</label>
-                        <input type="text" id="email" name="email" placeholder="Your email">
-                    </div>
-                    
-                    <div class="div">
-                        <label for="phone">and</label>
-                        <input type="text" id="phone" name="phone" placeholder="Your phone number">
+                <form action="#" id="contact__form" method="/">
+                    <div id="contact__form-container">
+                        <div class="div">
+                            <label for="name">Hey, my name is</label>
+                            <div class="input-container">
+                                <input type="text" id="name" name="name" placeholder="Your name">
+                                <span class="contact__name-alert"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="div">
+                            <label for="name">and I'm looking for</label>
+                            <select name="jobs" id="jobs">
+                                <option>Select category</option>
+                                <option value="1">option 1</option>
+                                <option value="2">option 2</option>
+                                <option value="3">option 3</option>
+                            </select>
+                        </div>
+                        
+                        <div class="div">
+                            <label for="form__email">Get in touch me at</label>
+                            <div class="input-container">
+                                <input type="email" id="form__email" name="email" placeholder="Your email">
+                                <span class="contact__email-alert"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="div">
+                            <label for="phone">and</label>
+                            <div class="input-container">
+                                <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+                                <span class="contact__phone-alert"></span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="checkbox-container">
                         <input type="checkbox" id="checkbox" name="checkbox" value="checkbox">
                         <label for="checkbox">I want to be aware of future updates</label>
                     </div>
-                    <button class="contact__form-submit">Send Enquiry</button> 
+                    <div class="contact__form-submit-container">
+                        <button type="button" class="contact__form-submit">Send Enquiry</button> 
+                        <div class="contact__confirmation-message">
+                            <img src="assets/footer/confirmation-icon.svg" alt="confirmation icon">
+                            <p>You successfully have subscribed </p>
+                            <span>|</span>
+                            <a href="contact.html">Send another</a>
+                        </div>
+                    </div>
                 </form>
             </section>
             <section class="contact__info">
@@ -152,8 +174,16 @@
             <div class="footer__subscription">
                 <h3>Be aware of updates</h3>
                 <div class="footer__mail">
-                    <input type="text" for="subscribe" id="email">
-                    <button type="submit" id="subscribe">Subscribe</button></div>
+                    <div class="footer__mail-container">
+                        <input type="text" for="subscribe" class="email">
+                        <button type="submit" id="subscribe">Subscribe</button>
+                    </div>
+                    <span class="emailAlert"></span>
+                </div>
+                <div class="footer__confirmation-message">
+                    <img src="assets/footer/confirmation-icon.svg" alt="confirmation icon">
+                    <p>You successfully have subscribed </p>
+                </div>
                 <div class="footer__contact-mail">
                     <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.0406 0.88916H2.59614C1.6143 0.88916 0.818359 1.75388 0.818359 2.82057V12.4776C0.818359 13.5443 1.6143 14.409 2.59614 14.409H15.0406C16.0224 14.409 16.8184 13.5443 16.8184 12.4776V2.82057C16.8184 1.75388 16.0224 0.88916 15.0406 0.88916Z" stroke="#6E7581" stroke-width="1.39773" stroke-linecap="round" stroke-linejoin="round"/>
@@ -186,6 +216,8 @@
     </footer>
 
 
-    <script type="text/javascript" src="js/app.js"> </script>
+    <script type="text/javascript" src="js/hamburgerMenu.js"> </script>    
+    <script type="text/javascript" src="js/subscription.js"> </script>
+    <script type="text/javascript" src="js/form.js"> </script>
 </body>
 </html>

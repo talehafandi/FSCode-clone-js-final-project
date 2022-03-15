@@ -2,7 +2,7 @@
 
 
 header{
-    min-height: 100vh;
+    min-height: 80vh;
     background-image: url('../assets/header-bg.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,7 +12,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5px;
+    padding: 15px 10px !important;
 }
 .header__brand-name{
     display: flex;
@@ -27,10 +27,10 @@ nav{
     @include flexCenter;
 
     
-    transition: 0.7s ease-out;
+    transition: .7s ease-out;
 
     width: 80%;
-    height: 95vh;
+    height: 88vh;
     background-color: #FAF4E7;
     position: absolute;
     // display: none;
@@ -60,6 +60,7 @@ nav{
     top: 0;
     left: 0;
     transition: 0.7s ease-in;
+    z-index: 555;
 }
 
 .header__buttons{
@@ -77,8 +78,25 @@ nav{
         border: none;
         cursor: pointer;
     }
-    
-
+    // .ham-line:first-child{ 
+    //     border-color: white;
+    //     border-width: 1px;
+    //     border-top-left-radius: 10px;
+    //     border-top-right-radius: 10px;
+    // }
+    .ham-line{
+        width: 30px;
+        height: 2px;
+        background-color: white;
+        margin: 6px;
+        border-radius: 5px;
+    }
+    // .ham-line:last-child{
+    //     border-color: white;
+    //     border-width: 1px;
+    //     border-bottom-left-radius: 10px;
+    //     border-bottom-right-radius: 10px;
+    // }
 }
 
 .header__text{
@@ -87,7 +105,7 @@ nav{
     h1{
         font-family: $primaryFont;
         color: $secondary;
-        font-size: 60px;
+        font-size: 66px;
         // font-weight: bold;
         // margin: 0;
     }
@@ -97,11 +115,14 @@ nav{
 }
 
 .main__img{
-    width: 90%;
+    width: 100%;
     position: absolute;
-    top: -120px;
+    bottom: 8%;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
     img{
-        width: 100%;
+        width: 90%;
         height: auto;
     }
 }
@@ -136,10 +157,12 @@ nav{
     @include flexCenter;
     text-align: center;
     gap: 16px;
+    margin-bottom: 50px;
 
     h1{
         font-size: 20px;
         line-height: 25px;
+        margin-bottom: 16px;
     }
     p{
         font-size: 16px;
@@ -237,10 +260,14 @@ nav{
 }
 .main__client-cards-container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     width: 90%;
     margin: 50px auto;
+    overflow: scroll; 
+    &::-webkit-scrollbar{
+        display: none;
+    } 
 }
 .main__client-cards{
     border: 1px solid #343434;
@@ -259,9 +286,7 @@ nav{
     }
 }
 
-.main__stats{
-    // height: 100vh;
-}
+
 .main__stats-container{
     width: 90%;
     margin: auto;
@@ -373,7 +398,7 @@ nav{
     align-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr;  
-    gap: 50px;  
+    gap: 50px;
 }
 .main__how-we-do-title{
     font-size: 26px;
@@ -514,16 +539,29 @@ footer{
         font-size: 16px;
         line-height: 20px;
     }
+    ul a:hover{
+        color: $hoveredBtn;
+        transition: all 0.4s ease-in-out;
+    }
 }
 
 .footer__subscription{
+    position: relative;
     h3{
         font-size: 14px;
         line-height: 16px;
         margin-bottom: 16px;
     }
-
-    #email{
+    .footer__mail{
+        // display: grid;
+        // grid-template-columns: 3fr 1fr;
+        display: flex;
+        flex-direction: column;  
+    }
+    .footer__mail-container{
+        display: flex;
+    }
+    .email{
         width: 230px;
         height: 42px;
         border-radius: 10px;
@@ -531,13 +569,25 @@ footer{
         border: none;
         margin-right: 5px;
     }
-
+    .emailAlert{
+        color: #F64E60;
+        display: block;
+        font-size: 12px;
+        margin-top: 8px;
+    }
     #subscribe{
         @include buttonStyle(14px, 13px);
         // height: 42px;
         border-radius: 10px;
     }
-
+    .footer__confirmation-message{
+        position: absolute;
+        top: 18%;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        display: none;
+    }
     .footer__contact-mail{
         display: flex;
         gap: 18px;
@@ -554,6 +604,7 @@ footer{
     a{
         text-decoration: none;
     }
+    
 }
 .footer__social-media--desktop{
     @extend .footer__social-media;
@@ -566,6 +617,7 @@ footer{
     header{
         display: grid;
         align-content: flex-start;
+        min-height: 100vh;
     }
     nav{
         width: 85%;
@@ -584,6 +636,10 @@ footer{
             font-size: 16px;
             line-height: 20px;
         }
+        ul a:hover{
+            color: $hoveredBtn;
+            transition: all 0.3s ease-in-out;
+        }
         .header__brand-name, .header__contact--wider{
             display: none;
         }
@@ -594,14 +650,17 @@ footer{
     }
     .header__text{
         display: unset;
-        margin: 140px 200px 60px;
+        margin: 90px auto 60px;
         text-align: center;
+        width: 63%;
     }
 
     .main__img{
-        width: 55%;
-        height: auto;
-        top: -5.5%;
+        // width: 55%;    
+        bottom: -30%;
+        img{
+            width: 65%;
+        }
     }
 
     .main__container{
@@ -740,4 +799,12 @@ footer{
     //         margin-right: 20px;
     //     }
     // }
+}
+
+@media(min-width: 1200px){
+    .header__text{
+        h1{
+            font-size: 96px;
+        }
+    }
 }
