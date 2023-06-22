@@ -180,8 +180,7 @@ nav {
 
 .main__img {
   width: 100%;
-  position: absolute;
-  bottom: 8%;
+  position: relative;
   z-index: 99;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -893,9 +892,6 @@ footer {
     margin: 90px auto 60px;
     text-align: center;
     width: 63%;
-  }
-  .main__img {
-    bottom: -30%;
   }
   .main__img img {
     width: 65%;

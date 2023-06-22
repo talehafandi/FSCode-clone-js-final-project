@@ -28,7 +28,6 @@ nav{
 
     
     transition: .7s ease-out;
-
     width: 80%;
     height: 88vh;
     background-color: #FAF4E7;
@@ -116,8 +115,8 @@ nav{
 
 .main__img{
     width: 100%;
-    position: absolute;
-    bottom: 8%;
+    position: relative;
+    // bottom: 8%;
     z-index: 99;
     display: flex;
     justify-content: center;
@@ -657,7 +656,7 @@ footer{
 
     .main__img{
         // width: 55%;    
-        bottom: -30%;
+        // bottom: -30%;
         img{
             width: 65%;
         }
